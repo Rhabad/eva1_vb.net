@@ -77,13 +77,19 @@ Public Class Form1
                 End Using
             End Using
         Catch ex As Exception
-            MsgBox("Error de conexion")
+            MessageBox.Show("Error al conectar: " & ex.Message)
         End Try
 
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Combo1.SelectedIndex = 2
+
+    End Sub
+
+    Private Sub btnAgregarTelefono_Click(sender As Object, e As EventArgs) Handles btnAgregarTelefono.Click
+        Dim form2 As New Form2()
+        form2.Show()
 
     End Sub
 End Class

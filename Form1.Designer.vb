@@ -38,10 +38,9 @@ Partial Class Form1
         numEdad = New NumericUpDown()
         btnAceptar = New Button()
         tbox = New TextBox()
-        btnEliminar = New Button()
         btnMostrar = New Button()
-        btnActualizar = New Button()
         Combo1 = New ComboBox()
+        btnAgregarTelefono = New Button()
         CType(numEdad, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -185,17 +184,6 @@ Partial Class Form1
         tbox.Size = New Size(261, 272)
         tbox.TabIndex = 19
         ' 
-        ' btnEliminar
-        ' 
-        btnEliminar.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
-        btnEliminar.ForeColor = Color.Yellow
-        btnEliminar.Location = New Point(447, 385)
-        btnEliminar.Name = "btnEliminar"
-        btnEliminar.Size = New Size(112, 28)
-        btnEliminar.TabIndex = 20
-        btnEliminar.Text = "Eliminar Cliente"
-        btnEliminar.UseVisualStyleBackColor = False
-        ' 
         ' btnMostrar
         ' 
         btnMostrar.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
@@ -207,17 +195,6 @@ Partial Class Form1
         btnMostrar.Text = "Mostrar"
         btnMostrar.UseVisualStyleBackColor = False
         ' 
-        ' btnActualizar
-        ' 
-        btnActualizar.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
-        btnActualizar.ForeColor = Color.Yellow
-        btnActualizar.Location = New Point(307, 385)
-        btnActualizar.Name = "btnActualizar"
-        btnActualizar.Size = New Size(112, 28)
-        btnActualizar.TabIndex = 22
-        btnActualizar.Text = "Actualizar Cliente"
-        btnActualizar.UseVisualStyleBackColor = False
-        ' 
         ' Combo1
         ' 
         Combo1.FormattingEnabled = True
@@ -227,16 +204,26 @@ Partial Class Form1
         Combo1.Size = New Size(142, 23)
         Combo1.TabIndex = 24
         ' 
+        ' btnAgregarTelefono
+        ' 
+        btnAgregarTelefono.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
+        btnAgregarTelefono.ForeColor = Color.Yellow
+        btnAgregarTelefono.Location = New Point(321, 385)
+        btnAgregarTelefono.Name = "btnAgregarTelefono"
+        btnAgregarTelefono.Size = New Size(196, 28)
+        btnAgregarTelefono.TabIndex = 25
+        btnAgregarTelefono.Text = "Agregar Telefonos"
+        btnAgregarTelefono.UseVisualStyleBackColor = False
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(192))
         ClientSize = New Size(571, 423)
+        Controls.Add(btnAgregarTelefono)
         Controls.Add(Combo1)
-        Controls.Add(btnActualizar)
         Controls.Add(btnMostrar)
-        Controls.Add(btnEliminar)
         Controls.Add(tbox)
         Controls.Add(btnAceptar)
         Controls.Add(numEdad)
@@ -276,8 +263,7 @@ Partial Class Form1
     Friend WithEvents numEdad As NumericUpDown
     Friend WithEvents btnAceptar As Button
     Friend WithEvents tbox As TextBox
-    Friend WithEvents btnEliminar As Button
     Friend WithEvents btnMostrar As Button
-    Friend WithEvents btnActualizar As Button
     Friend WithEvents Combo1 As ComboBox
+    Friend WithEvents btnAgregarTelefono As Button
 End Class
