@@ -35,13 +35,13 @@ Partial Class Form1
         lblEdad = New Label()
         lblGenero = New Label()
         txtDireccion = New TextBox()
-        rbMasculino = New RadioButton()
-        rbFemenino = New RadioButton()
         numEdad = New NumericUpDown()
         btnAceptar = New Button()
         tbox = New TextBox()
-        btnBorrar = New Button()
+        btnEliminar = New Button()
         btnMostrar = New Button()
+        btnActualizar = New Button()
+        Combo1 = New ComboBox()
         CType(numEdad, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -154,28 +154,6 @@ Partial Class Form1
         txtDireccion.Size = New Size(142, 23)
         txtDireccion.TabIndex = 14
         ' 
-        ' rbMasculino
-        ' 
-        rbMasculino.AutoSize = True
-        rbMasculino.Location = New Point(116, 245)
-        rbMasculino.Name = "rbMasculino"
-        rbMasculino.Size = New Size(80, 19)
-        rbMasculino.TabIndex = 15
-        rbMasculino.TabStop = True
-        rbMasculino.Text = "Masculino"
-        rbMasculino.UseVisualStyleBackColor = True
-        ' 
-        ' rbFemenino
-        ' 
-        rbFemenino.AutoSize = True
-        rbFemenino.Location = New Point(202, 245)
-        rbFemenino.Name = "rbFemenino"
-        rbFemenino.Size = New Size(78, 19)
-        rbFemenino.TabIndex = 16
-        rbFemenino.TabStop = True
-        rbFemenino.Text = "Femenino"
-        rbFemenino.UseVisualStyleBackColor = True
-        ' 
         ' numEdad
         ' 
         numEdad.Location = New Point(116, 215)
@@ -190,16 +168,16 @@ Partial Class Form1
         ' 
         btnAceptar.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
         btnAceptar.ForeColor = Color.Yellow
-        btnAceptar.Location = New Point(12, 346)
+        btnAceptar.Location = New Point(46, 346)
         btnAceptar.Name = "btnAceptar"
-        btnAceptar.Size = New Size(85, 45)
+        btnAceptar.Size = New Size(85, 65)
         btnAceptar.TabIndex = 18
         btnAceptar.Text = "Aceptar"
         btnAceptar.UseVisualStyleBackColor = False
         ' 
         ' tbox
         ' 
-        tbox.Location = New Point(298, 119)
+        tbox.Location = New Point(298, 107)
         tbox.Multiline = True
         tbox.Name = "tbox"
         tbox.ReadOnly = True
@@ -207,27 +185,47 @@ Partial Class Form1
         tbox.Size = New Size(261, 272)
         tbox.TabIndex = 19
         ' 
-        ' btnBorrar
+        ' btnEliminar
         ' 
-        btnBorrar.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
-        btnBorrar.ForeColor = Color.Yellow
-        btnBorrar.Location = New Point(103, 346)
-        btnBorrar.Name = "btnBorrar"
-        btnBorrar.Size = New Size(85, 45)
-        btnBorrar.TabIndex = 20
-        btnBorrar.Text = "Borrar"
-        btnBorrar.UseVisualStyleBackColor = False
+        btnEliminar.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
+        btnEliminar.ForeColor = Color.Yellow
+        btnEliminar.Location = New Point(447, 385)
+        btnEliminar.Name = "btnEliminar"
+        btnEliminar.Size = New Size(112, 28)
+        btnEliminar.TabIndex = 20
+        btnEliminar.Text = "Eliminar Cliente"
+        btnEliminar.UseVisualStyleBackColor = False
         ' 
         ' btnMostrar
         ' 
         btnMostrar.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
         btnMostrar.ForeColor = Color.Yellow
-        btnMostrar.Location = New Point(195, 346)
+        btnMostrar.Location = New Point(173, 345)
         btnMostrar.Name = "btnMostrar"
-        btnMostrar.Size = New Size(85, 45)
+        btnMostrar.Size = New Size(85, 66)
         btnMostrar.TabIndex = 21
         btnMostrar.Text = "Mostrar"
         btnMostrar.UseVisualStyleBackColor = False
+        ' 
+        ' btnActualizar
+        ' 
+        btnActualizar.BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
+        btnActualizar.ForeColor = Color.Yellow
+        btnActualizar.Location = New Point(307, 385)
+        btnActualizar.Name = "btnActualizar"
+        btnActualizar.Size = New Size(112, 28)
+        btnActualizar.TabIndex = 22
+        btnActualizar.Text = "Actualizar Cliente"
+        btnActualizar.UseVisualStyleBackColor = False
+        ' 
+        ' Combo1
+        ' 
+        Combo1.FormattingEnabled = True
+        Combo1.Items.AddRange(New Object() {"Masculino", "Femenino", "NO BINARIE"})
+        Combo1.Location = New Point(116, 244)
+        Combo1.Name = "Combo1"
+        Combo1.Size = New Size(142, 23)
+        Combo1.TabIndex = 24
         ' 
         ' Form1
         ' 
@@ -235,13 +233,13 @@ Partial Class Form1
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(192))
         ClientSize = New Size(571, 423)
+        Controls.Add(Combo1)
+        Controls.Add(btnActualizar)
         Controls.Add(btnMostrar)
-        Controls.Add(btnBorrar)
+        Controls.Add(btnEliminar)
         Controls.Add(tbox)
         Controls.Add(btnAceptar)
         Controls.Add(numEdad)
-        Controls.Add(rbFemenino)
-        Controls.Add(rbMasculino)
         Controls.Add(txtDireccion)
         Controls.Add(lblGenero)
         Controls.Add(lblEdad)
@@ -256,7 +254,7 @@ Partial Class Form1
         Controls.Add(lblNombre)
         Controls.Add(lblRut)
         Name = "Form1"
-        Text = "Form1"
+        Text = "Registro De Empleados"
         CType(numEdad, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -275,11 +273,11 @@ Partial Class Form1
     Friend WithEvents lblEdad As Label
     Friend WithEvents lblGenero As Label
     Friend WithEvents txtDireccion As TextBox
-    Friend WithEvents rbMasculino As RadioButton
-    Friend WithEvents rbFemenino As RadioButton
     Friend WithEvents numEdad As NumericUpDown
     Friend WithEvents btnAceptar As Button
     Friend WithEvents tbox As TextBox
-    Friend WithEvents btnBorrar As Button
+    Friend WithEvents btnEliminar As Button
     Friend WithEvents btnMostrar As Button
+    Friend WithEvents btnActualizar As Button
+    Friend WithEvents Combo1 As ComboBox
 End Class
